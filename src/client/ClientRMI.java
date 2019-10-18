@@ -22,10 +22,10 @@ public class ClientRMI {
 		try {
 			CatalogueRemote stub=(CatalogueRemote)Naming.lookup("rmi://localhost:1099/CATAL");
 			
-			System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ WELCOME ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ ");
+			System.out.println("Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨ WELCOME Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨Â¨ ");
 System.out.println("pour consulter tous les comptes tappez 1 "+"\n");	
 System.out.println("pour consulter un compte tappez 2 "+"\n");			
-System.out.println("pour consulter un compte a partir d'un mot clé tappez 3"+"\n");			
+System.out.println("pour consulter un compte a partir d'un mot clÃ© tappez 3"+"\n");			
 System.out.println("pour modifier un menton tappez  4 "+"\n");
 System.out.println("pour convertir un menton dans  un compte  tappez 5 "+"\n");			
 			
@@ -48,7 +48,7 @@ System.out.println("pour convertir un menton dans  un compte  tappez 5 "+"\n");
 				
 				break;
 			case 3:
-				System.out.println("Donnez un mot clé");
+				System.out.println("Donnez un mot clÃ©");
 				Scanner sc2 =new Scanner(System.in);
 				String s2=sc2.nextLine();
 				List <compteB> AGB=stub.consulterCompteParKey(s2);
@@ -58,8 +58,8 @@ System.out.println("pour convertir un menton dans  un compte  tappez 5 "+"\n");
 				break;
 				
 			case 4:
-				List <compteB> societeGenerale=stub.consulter();
-				for(compteB c:societeGenerale){
+				List <compteB> SG=stub.consulter();
+				for(compteB c:SG){
 					if(c.getNom().equals("martin")){
 						c.setMenton(-200);
 						System.out.println(c.getNom()+"--"+"menton avant"+(c.getMenton()+200)+"menton apres "+c.getMenton());
@@ -76,7 +76,7 @@ System.out.println("pour convertir un menton dans  un compte  tappez 5 "+"\n");
 					if(c.getNom().equals("martin")){
 						
 						int z=stub.convert(c.getMenton());
-					System.out.println("menton en Euro " +c.getMenton()+ "€" + "--" +"menton en DZ"+"\n"+ z + "DA");
+					System.out.println("menton en Euro " +c.getMenton()+ "â‚¬" + "--" +"menton en DZ"+"\n"+ z + "DA");
 
 					}
 				}
